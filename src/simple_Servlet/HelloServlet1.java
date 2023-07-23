@@ -3,7 +3,10 @@ package simple_Servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +36,12 @@ public class HelloServlet1 extends HttpServlet {
 		
 		PrintWriter pw = response.getWriter();
 		String s1=request.getParameter("t1");
-		pw.println("<h1>Hello :"+s1);
-		pw.close();
+	
+			pw.println("<h1>Hello :"+s1);
+			pw.close();
+		
+		
+		
 	}
 
 	/**

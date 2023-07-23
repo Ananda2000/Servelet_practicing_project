@@ -36,10 +36,22 @@ public class helloservlet extends HttpServlet {
 		pw.println("<h1>Hello :"+s1);
 		pw.close();
 	*/
+		PrintWriter pw = response.getWriter();
+		String s1=request.getParameter("t1");
+		if(s1.equals("1234"))
+		{
+			pw.println("this is forward");
 	 RequestDispatcher  req = request.getRequestDispatcher("HelloServlet1");
-	// req.forward(request, response);
+	 req.forward(request, response);
+		}
+		else {
+			pw.println("This is include");
+			RequestDispatcher reqdisp= request.getRequestDispatcher("input.html");
+			reqdisp.include(request, response);
+		}
+	 }
 
-	}
+	
 		
 		
 	/**
